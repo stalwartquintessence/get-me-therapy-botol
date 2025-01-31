@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Image from "next/image";
 import BottleInHand from "../public/Hand-Holding-Bottle.svg";
 import VacuumeBottle from "../public/vaccume-bottle.svg";
