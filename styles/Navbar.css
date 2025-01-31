@@ -1,0 +1,28 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    margin: 20px 6em;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.navigation-right {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.nav-items a {
+    font-size: 20px;
+    margin: 0 20px;
+    outline: none;
+}

@@ -1,0 +1,30 @@
+.category {
+    height: 860px;
+    width: 100%;
+    background-color: #20292C;
+    display: flex;
+    justify-content: space-between;
+}
+
+.types {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+    line-height: 36px;
+}
+
+.types ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 75px;
+}
+
+.types li {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+

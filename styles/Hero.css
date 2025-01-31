@@ -1,0 +1,212 @@
+:root {
+    --animation-duration: 2400ms;
+    --animation-delay: 1200ms;
+    --animation-timing-function: ease-in-out;
+}
+
+.hero {
+    position: relative;
+    height: 860px;
+    display: flex;
+    justify-content: center;
+}
+
+.bottle-cap {
+    position: absolute;
+    top: 347px;
+    animation: moveUp var(--animation-duration) var(--animation-delay) var(--animation-timing-function) forwards;
+}
+
+@keyframes moveUp {
+    from {
+        top: 347px;
+    }
+
+    to {
+        top: 117px;
+    }
+}
+
+.bottle-down {
+    position: absolute;
+    top: 347px;
+    animation: moveDown var(--animation-duration) var(--animation-delay) var(--animation-timing-function) both;
+}
+
+@keyframes moveDown {
+    from {
+        top: 347px;
+    }
+
+    to {
+        top: 567px;
+    }
+}
+
+.move-down-again-c {
+    position: absolute;
+    top: 117px;
+    animation: moveDownAgainC 1s var(--animation-timing-function) forwards;
+}
+
+@keyframes moveDownAgainC {
+    100% {
+        top: 1008px;
+        transform: scale(0.9);
+    }
+}
+
+.move-down-again-d {
+    position: absolute;
+    top: 567px;
+    animation: moveDownAgainD 1s var(--animation-timing-function) forwards;
+}
+
+@keyframes moveDownAgainD {
+    100% {
+        top: 994px;
+        transform: scale(0.9);
+    }
+}
+
+.hero-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+    opacity: 0;
+    animation: textZoom var(--animation-duration) var(--animation-delay) forwards;
+    animation-timing-function: var(--animation-timing-function);
+    position: absolute;
+    top: 285px;
+    z-index: -1;
+}
+
+@keyframes textZoom {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.hero-title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 96px;
+    line-height: 100px;
+    letter-spacing: 0.02em;
+}
+
+.hero-description {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 38px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin-top: 10px;
+}
+
+.hero button {
+    position: absolute;
+    top: 601px;
+    animation: buttonMoveUp var(--animation-duration) var(--animation-delay) both;
+    animation-timing-function: var(--animation-timing-function);
+    z-index: -1;
+}
+
+@keyframes buttonMoveUp {
+    from {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.circle {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom, #4DFBFB, #788EFF);
+    z-index: -2;
+    top: 281px;
+    animation: circleZoom var(--animation-duration) var(--animation-delay) both;
+    animation-timing-function: var(--animation-timing-function);
+}
+
+.circle::after {
+    content: "";
+    background-color: white;
+    border-radius: 50%;
+    width: 385px;
+    height: 385px;
+    top: 7.5px;
+    left: 7.5px;
+    position: absolute;
+}
+
+@keyframes circleZoom {
+    to {
+        transform: scale(1.5);
+    }
+}
+
+.bottles {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    left: 96px;
+    right: 96px;
+    bottom: 60px;
+    animation: fly-away-and-return 4s both;
+    animation-timeline: view();
+    animation-delay: 5s;
+}
+
+@keyframes fly-away-and-return {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-1000%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.bottle-bg {
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    color: #fff;
+    padding: 12px 36px;
+    height: 125px;
+    width: 125px;
+    background-image: linear-gradient(to bottom, #4DFBFB, #788EFF);
+    animation: appear 2.4s both;
+    animation-delay: var(--animation-delay);
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

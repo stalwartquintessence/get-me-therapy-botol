@@ -1,0 +1,276 @@
+/* z-index
+ * image: -3
+ * info: -2
+ * pulser::after: -1
+ * pulser: 0
+*/
+
+.road-map {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300vh;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.road-map-container {
+    position: relative;
+    height: 552px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #B94E5C;
+    flex-direction: column;
+    position: sticky;
+    top: 30px;
+}
+
+/* Road map image */
+.road-map-image {
+    position: absolute;
+    z-index: -3;
+    animation: dim ease-out both;
+    animation-timeline: view();
+    animation-range: entry 100% cover 200%;
+}
+
+/* Road map info */
+.road-map-info {
+    font-family: "Urbanist";
+    text-align: center;
+    align-self: center;
+    color: #000;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    top: 0;
+    z-index: -3;
+    animation: disappear linear both;
+    animation-timeline: view();
+    animation-range: entry 400% cover 200%;
+;}
+
+@keyframes dim {
+    20% {
+        opacity: 0.2;
+    }
+    30% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0.1;
+    }
+}
+
+@keyframes disappear {
+    10% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.road-map-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.road-map-message {
+    font-size: 36px;
+}
+
+/* Camera Frame */
+.frame {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    height: 552px;
+    top: 0;
+    left: 160%;
+    right: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    animation: frameDrift ease-in-out forwards;
+    animation-timeline: view();
+}
+
+@keyframes frameDrift {
+    to {
+        left: -180%;
+    }
+}
+
+/* Timeline */
+.timeline {
+    position: absolute;
+    top: 353.63px;
+    width: 800px;
+    height: 48.26px;
+    z-index: -1;
+    stroke: #FCD0D6;
+}
+
+/* Week */
+.week {
+    flex-shrink: 0;
+    width: 43%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 80px;
+}
+
+.week-message {
+    font-family: "Urbanist";
+    border-left: 3px dashed #F6687A;
+    padding: 36px 0 36px 36px;
+    position: absolute;
+    width: max-content;
+}
+
+.week-title {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 36px;
+}
+
+.week-description {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+#number {
+    font-family: "Plus Jakarta Sans", serif;
+    font-size: 72px;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 2px #F6687A;
+}
+
+/* Footer */
+.road-map-bottom {
+    position: sticky;
+    top: 582px;
+}
+
+.footer {
+    align-items: center;
+    padding: 40px 96px 45.75px;
+    background-color: #201F1F;
+    color: white;
+}
+
+.logo {
+    filter: invert(100%);
+}
+
+.footer-top,
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-top {
+    margin-bottom: 46px;
+}
+
+.socials {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-right {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.footer-items a {
+    font-size: 20px;
+    margin: 0 20px;
+    outline: none;
+}
+
+.copyright {
+    font-size: 16px;
+    background-color: #323232;
+    text-align: center;
+    color: #858585;
+    height: 40px;
+    line-height: 2.15em;
+    margin-bottom: 10px;
+}
+
+/* Pulser and Ellipse */
+.pulser {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background-color: #F6687A;
+    border-radius: 50%;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pulser::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 54px;
+    height: 54px;
+    background-color: #F6687A;
+    opacity: 30%;
+    border-radius: 50%;
+}
+
+.pulser::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #FCD0D6;
+    left: 112px;
+    top: -38px;
+    z-index: 1;
+}
+
+.pulser#last::after {
+    content: unset;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.timeline {
+    animation: animate-tl 2s ease;
+}
+
+@keyframes animate-tl {
+    to {
+        stroke: #F6687A;
+    }
+}

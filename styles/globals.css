@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* 
+    --background: #0a0a0a;
+    --foreground: #ededed; 
+    */
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Familjen Grotesk', Arial, sans-serif;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  border-radius: 100px;
+  color: #fff;
+  padding: 12px 36px;
+  font-size: 20px;
+  line-height: auto;
+  height: fit-content;
+  width: fit-content;
+  background-image: linear-gradient(to right, #00D1FF, #1A83FF);
+}
